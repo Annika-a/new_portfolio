@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - Data Engineer & Digital Artist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Alex Chen</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#data-engineering" class="nav-link">Data Engineering</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#art" class="nav-link">Art Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Data Engineer</span>
+                    <span class="title-line">& Digital Artist</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Transforming raw data into insights and pixels into stories. 
+                    Bridging the gap between technical precision and creative expression.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#data-engineering" class="btn btn-primary">View Data Projects</a>
+                    <a href="#art" class="btn btn-secondary">Explore Art</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="element element-1"></div>
+                    <div class="element element-2"></div>
+                    <div class="element element-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Where data meets creativity</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm Alex Chen, a passionate data engineer with a deep love for digital art. 
+                        With over 5 years of experience in building scalable data pipelines and 
+                        creating stunning visual experiences, I believe that the best solutions 
+                        come from combining analytical thinking with creative vision.
+                    </p>
+                    <p>
+                        My journey spans from optimizing ETL processes to crafting immersive 
+                        digital artworks. I specialize in Python, SQL, Apache Spark, and cloud 
+                        technologies, while also exploring the realms of digital painting, 
+                        3D modeling, and interactive installations.
+                    </p>
+                    <div class="skills-highlight">
+                        <div class="skill-category">
+                            <h4>Data Engineering</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Apache Spark</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Docker</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Digital Art</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Photoshop</span>
+                                <span class="skill-tag">Blender</span>
+                                <span class="skill-tag">Procreate</span>
+                                <span class="skill-tag">After Effects</span>
+                                <span class="skill-tag">Unity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Engineering Section -->
+    <section id="data-engineering" class="data-engineering">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Data Engineering Projects</h2>
+                <p class="section-subtitle">Building robust data solutions</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-project="data-lake">
+                    <div class="project-image">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Data Lake Architecture</h3>
+                            <span class="project-date">March 2024</span>
+                        </div>
+                        <p>Architected a scalable data lake solution on AWS with automated ETL processes and data governance.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">Glue</span>
+                            <span class="tech-tag">Athena</span>
+                        </div>
+                        <button class="project-link expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-card" data-project="ml-store">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>ML Feature Store</h3>
+                            <span class="project-date">January 2024</span>
+                        </div>
+                        <p>Designed and implemented a feature store serving ML models with real-time feature computation and versioning.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <button class="project-link expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="project-card" data-project="pipeline">
+                    <div class="project-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Real-time Analytics Pipeline</h3>
+                            <span class="project-date">November 2023</span>
+                        </div>
+                        <p>Built a streaming data pipeline processing 1M+ events daily using Apache Kafka, Spark Streaming, and AWS Kinesis.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Apache Kafka</span>
+                            <span class="tech-tag">Spark Streaming</span>
+                            <span class="tech-tag">AWS Kinesis</span>
+                        </div>
+                        <button class="project-link expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Art Portfolio Section -->
+    <section id="art" class="art-portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Digital Art Portfolio</h2>
+                <p class="section-subtitle">Visual storytelling through pixels</p>
+            </div>
+            <div class="art-gallery">
+                <div class="art-item" data-artwork="abstract-geometry">
+                    <div class="art-image">
+                        <img src="img/satelliitti.gif" alt="Abstract Geometry - 3D rendered abstract composition">
+                    </div>
+                    <div class="art-overlay">
+                        <div class="art-header">
+                            <h3>Abstract Geometry</h3>
+                            <span class="art-date">February 2024</span>
+                        </div>
+                        <p>3D rendered abstract composition</p>
+                    </div>
+                </div>
+                <div class="art-item" data-artwork="neon-dreams">
+                    <div class="art-image">
+                        <img src="img/run_frontf1335-300x225.jpg" alt="Neon Dreams - Digital painting exploring cyberpunk aesthetics">
+                    </div>
+                    <div class="art-overlay">
+                        <div class="art-header">
+                            <h3>Neon Dreams</h3>
+                            <span class="art-date">December 2023</span>
+                        </div>
+                        <p>Digital painting exploring cyberpunk aesthetics</p>
+                    </div>
+                </div>
+                <div class="art-item" data-artwork="natures-code">
+                    <div class="art-image">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="art-overlay">
+                        <h3>Nature's Code</h3>
+                        <p>Generative art inspired by algorithms</p>
+                    </div>
+                </div>
+                <div class="art-item" data-artwork="space-odyssey">
+                    <div class="art-image">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="art-overlay">
+                        <h3>Space Odyssey</h3>
+                        <p>Sci-fi concept art and world building</p>
+                    </div>
+                </div>
+                <div class="art-item" data-artwork="emotional-landscapes">
+                    <div class="art-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="art-overlay">
+                        <h3>Emotional Landscapes</h3>
+                        <p>Expressive digital landscapes</p>
+                    </div>
+                </div>
+                <div class="art-item" data-artwork="infinite-loop">
+                    <div class="art-image">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="art-overlay">
+                        <h3>Infinite Loop</h3>
+                        <p>Interactive installation concept</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Ready to collaborate on your next project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:alex.chen@email.com">alex.chen@email.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/alexchen" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/alexchen" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://dribbble.com/alexchen" class="social-link" target="_blank"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://behance.net/alexchen" class="social-link" target="_blank"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i id="modalIcon" class="fas fa-database"></i>
+                </div>
+                <div class="modal-title-section">
+                    <h2 id="modalTitle">Project Title</h2>
+                    <p id="modalSubtitle">Project Subtitle</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Overview</h3>
+                    <p id="modalOverview">Project overview details...</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Technologies Used</h3>
+                    <div id="modalTech" class="modal-tech-tags"></div>
+                </div>
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul id="modalFeatures"></ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Results & Impact</h3>
+                    <p id="modalResults">Project results and impact...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary">View Code</button>
+                <button class="btn btn-secondary">Live Demo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Art Modal -->
+    <div id="artModal" class="art-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <img id="artModalImage" src="" alt="Artwork" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="modal-title-section">
+                    <h2 id="artModalTitle">Artwork Title</h2>
+                    <p id="artModalSubtitle">Artwork Subtitle</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Overview</h3>
+                    <p id="artModalOverview">Artwork overview details...</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Techniques Used</h3>
+                    <div id="artModalTech" class="modal-tech-tags"></div>
+                </div>
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul id="artModalFeatures"></ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Results & Impact</h3>
+                    <p id="artModalResults">Artwork results and impact...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary">View Gallery</button>
+                <button class="btn btn-secondary">Purchase Print</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Alex Chen. All rights reserved.</p>
+                <p>Built with passion for data and art</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
