@@ -1,3 +1,48 @@
+// Personal Data Loading Function
+function loadPersonalData() {
+    // Update page title
+    document.getElementById('pageTitle').textContent = `${personData.name} - ${personData.title}`;
+    
+    // Update navigation
+    document.getElementById('navName').textContent = personData.name;
+    
+    // Update hero section
+    document.getElementById('heroTitle1').textContent = personData.hero.title.line1;
+    document.getElementById('heroTitle2').textContent = personData.hero.title.line2;
+    document.getElementById('heroSubtitle').textContent = personData.hero.subtitle;
+    
+    // Update section titles
+    document.getElementById('aboutTitle').textContent = personData.sections.about.title;
+    document.getElementById('aboutSubtitle').textContent = personData.sections.about.subtitle;
+    document.getElementById('dataTitle').textContent = personData.sections.dataEngineering.title;
+    document.getElementById('dataSubtitle').textContent = personData.sections.dataEngineering.subtitle;
+    document.getElementById('artTitle').textContent = personData.sections.art.title;
+    document.getElementById('artSubtitle').textContent = personData.sections.art.subtitle;
+    document.getElementById('contactTitle').textContent = personData.sections.contact.title;
+    document.getElementById('contactSubtitle').textContent = personData.sections.contact.subtitle;
+    
+    // Update bio content
+    document.getElementById('bioIntro').textContent = personData.bio.intro;
+    document.getElementById('bioJourney').textContent = personData.bio.journey;
+    
+    // Update contact information
+    const emailLink = document.getElementById('emailLink');
+    emailLink.href = `mailto:${personData.email}`;
+    emailLink.textContent = personData.email;
+    
+    document.getElementById('locationText').textContent = personData.location;
+    
+    // Update social links
+    document.getElementById('linkedinLink').href = personData.socialLinks.linkedin;
+    document.getElementById('githubLink').href = personData.socialLinks.github;
+    document.getElementById('dribbbleLink').href = personData.socialLinks.dribbble;
+    document.getElementById('behanceLink').href = personData.socialLinks.behance;
+    
+    // Update footer
+    document.getElementById('footerCopyright').textContent = personData.footer.copyright;
+    document.getElementById('footerTagline').textContent = personData.footer.tagline;
+}
+
 // Project Modal Functionality
 // Modal elements
 const modal = document.getElementById('projectModal');
@@ -104,6 +149,9 @@ function closeArtModal() {
 
 // Event listeners for project cards
 document.addEventListener('DOMContentLoaded', () => {
+    // Load personal data first
+    loadPersonalData();
+    
     const projectCards = document.querySelectorAll('.project-card');
     
     projectCards.forEach(card => {
