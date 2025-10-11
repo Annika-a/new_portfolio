@@ -1,3 +1,80 @@
+// Dynamic Project Card Generation
+function generateProjectCards() {
+    const projectsGrid = document.getElementById('projectsGrid');
+    projectsGrid.innerHTML = ''; // Clear existing content
+    
+    // Get all projects from data.js
+    const projects = portfolioData.projects;
+    
+    // Generate a card for each project
+    Object.keys(projects).forEach(projectId => {
+        const project = projects[projectId];
+        
+        // Create project card element
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        projectCard.setAttribute('data-project', projectId);
+        
+        // Format date for display
+        let displayDate = '';
+        if (project.date) {
+            const date = new Date(project.date);
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+            displayDate = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+        }
+        
+        // Create tech tags HTML
+        const techTags = project.technologies.slice(0, 3).map(tech => 
+            `<span class="tech-tag">${tech}</span>`
+        ).join('');
+        
+        // Set the card HTML
+        projectCard.innerHTML = `
+            <div class="project-image">
+                <i class="${project.icon}"></i>
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>${project.title}</h3>
+                    <span class="project-date">${displayDate}</span>
+                </div>
+                <p>${project.overview.substring(0, 120)}...</p>
+                <div class="project-tech">
+                    ${techTags}
+                </div>
+                <button class="project-link expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
+            </div>
+        `;
+        
+        // Add event listeners
+        const expandBtn = projectCard.querySelector('.expand-btn');
+        expandBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openProjectModal(projectId);
+        });
+        
+        // Also allow clicking anywhere on the card
+        projectCard.addEventListener('click', (e) => {
+            if (!e.target.closest('.expand-btn')) {
+                openProjectModal(projectId);
+            }
+        });
+        
+        // Add hover effects
+        projectCard.addEventListener('mouseenter', () => {
+            projectCard.style.transform = 'translateY(-10px)';
+        });
+        
+        projectCard.addEventListener('mouseleave', () => {
+            projectCard.style.transform = 'translateY(0)';
+        });
+        
+        // Add to grid
+        projectsGrid.appendChild(projectCard);
+    });
+}
+
 // Personal Data Loading Function
 function loadPersonalData() {
     // Update page title
@@ -152,36 +229,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load personal data first
     loadPersonalData();
     
-    const projectCards = document.querySelectorAll('.project-card');
+    // Generate project cards dynamically
+    generateProjectCards();
     
-    projectCards.forEach(card => {
-        const expandBtn = card.querySelector('.expand-btn');
-        const projectId = card.getAttribute('data-project');
-        const project = portfolioData.projects[projectId];
-        
-        // Update date display
-        if (project && project.date) {
-            const dateElement = card.querySelector('.project-date');
-            if (dateElement) {
-                const date = new Date(project.date);
-                const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-                    'July', 'August', 'September', 'October', 'November', 'December'];
-                dateElement.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
-            }
-        }
-        
-        expandBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openProjectModal(projectId);
-        });
-        
-        // Also allow clicking anywhere on the card
-        card.addEventListener('click', (e) => {
-            if (!e.target.closest('.expand-btn')) {
-                openProjectModal(projectId);
-            }
-        });
-    });
+    // Project cards are now generated dynamically, so we don't need to set up event listeners here
+    // as they are already set up in the generateProjectCards function
     
     // Event listeners for art items
     const artItems = document.querySelectorAll('.art-item');
@@ -362,16 +414,7 @@ document.querySelectorAll('.art-item').forEach(item => {
     });
 });
 
-// Project card hover effects
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px)';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-    });
-});
+// Project card hover effects are now handled in the generateProjectCards function
 
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {

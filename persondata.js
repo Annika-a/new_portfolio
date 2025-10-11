@@ -5,7 +5,7 @@ const personData = {
     location: 'Helsinki, Finland',
     email: 'emma.virtanen@example.fi',
     bio: {
-        intro: "I'm Emma Virtanen, a passionate data engineer with a deep love for digital art. Based in Helsinki, Finland, I have over 5 years of experience in building scalable data pipelines and creating stunning visual experiences. I believe that the best solutions come from combining analytical thinking with creative vision.",
+        intro: "Example content  I'm Emma Virtanen, a passionate data engineer with a deep love for digital art. Based in Helsinki, Finland, I have over 5 years of experience in building scalable data pipelines and creating stunning visual experiences. I believe that the best solutions come from combining analytical thinking with creative vision.",
         journey: "My journey spans from optimizing ETL processes for Finnish tech companies to crafting immersive digital artworks inspired by Nordic landscapes. I specialize in Python, SQL, Apache Spark, and cloud technologies, while also exploring the realms of digital painting, 3D modeling, and interactive installations."
     },
     skills: {

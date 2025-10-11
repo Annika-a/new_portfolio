@@ -35,6 +35,19 @@ const portfolioData = {
             ],
             results: 'Improved ML model performance by 20% through consistent feature engineering. Reduced feature development time by 60% and enabled faster model deployment cycles. The system now processes data for over 5 million active players across Nordic markets.'
         },
+        'ml project': {
+            icon: 'fas fa-chart-line',
+            title: 'ML for job searc',
+            subtitle: 'Centralized feature management for machine learning',
+            date: '2024-01-22',
+            overview: 'Built a comprehensive feature store for a Helsinki-based gaming company that serves as the single source of truth for ML features across multiple teams. The system provides real-time feature computation, versioning, and monitoring capabilities for player behavior analytics.',
+            technologies: ['Python', 'Redis', 'Docker', 'FastAPI', 'PostgreSQL', 'Apache Airflow'],
+            features: [
+                'Real-time feature computation and serving',
+                'Feature versioning and lineage tracking' 
+            ],
+            results: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        },
         pipeline: {
             icon: 'fas fa-database',
             title: 'Real-time Analytics Pipeline',
