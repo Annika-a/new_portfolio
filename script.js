@@ -30,9 +30,13 @@ function generateProjectCards() {
         ).join('');
         
         // Set the card HTML
+        const projectImageContent = project.imageSrc 
+            ? `<img src="${project.imageSrc}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">`
+            : `<i class="${project.icon}"></i>`;
+        
         projectCard.innerHTML = `
             <div class="project-image">
-                <i class="${project.icon}"></i>
+                ${projectImageContent}
             </div>
             <div class="project-content">
                 <div class="project-header">
@@ -149,7 +153,15 @@ function openProjectModal(projectId) {
     if (!project) return;
     
     // Update modal content
-    modalIcon.className = project.icon;
+    if (project.imageSrc) {
+        modalIcon.innerHTML = `<img src="${project.imageSrc}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">`;
+        modalIcon.style.width = '200px';
+        modalIcon.style.height = '150px';
+    } else {
+        modalIcon.className = project.icon;
+        modalIcon.style.width = '';
+        modalIcon.style.height = '';
+    }
     modalTitle.textContent = project.title;
     modalSubtitle.textContent = project.subtitle;
     modalOverview.textContent = project.overview;

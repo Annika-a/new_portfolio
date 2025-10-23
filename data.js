@@ -53,6 +53,7 @@ const portfolioData = {
             title: 'Real-time Analytics Pipeline',
             subtitle: 'High-performance streaming data processing',
             date: '2023-11-08',
+            imageSrc: 'img/projectstats.png',
             overview: 'Designed and implemented a robust real-time analytics pipeline for a Finnish e-commerce platform, capable of processing over 1 million events daily. The system handles data ingestion, transformation, and analysis with sub-second latency requirements for Nordic market operations.',
             technologies: ['Apache Kafka', 'Spark Streaming', 'AWS Kinesis', 'Docker', 'Kubernetes', 'Prometheus'],
             features: [
