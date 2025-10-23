@@ -28,7 +28,7 @@ const personData = {
     sections: {
         about: {
             title: 'About Me',
-            subtitle: 'Where data meets creativity'
+            subtitle: 'This is a template.Where data meets creativity'
         },
         dataEngineering: {
             title: 'Data Engineering Projects',
@@ -45,6 +45,6 @@ const personData = {
     },
     footer: {
         copyright: '© 2024 Annica A. All rights reserved.',
-        tagline: 'Built with passion for data and art'
+        tagline: 'This is a template. with passion for data and art and cursor'
     }
 };
