@@ -164,7 +164,19 @@ function openProjectModal(projectId) {
     }
     modalTitle.textContent = project.title;
     modalSubtitle.textContent = project.subtitle;
-    modalOverview.textContent = project.overview;
+    
+    // Update overview with image if available
+    if (project.imageSrc) {
+        modalOverview.innerHTML = `
+            <div style="margin-bottom: 20px;">
+                <img src="${project.imageSrc}" alt="${project.title}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+            <p>${project.overview}</p>
+        `;
+    } else {
+        modalOverview.textContent = project.overview;
+    }
+    
     modalResults.textContent = project.results;
     
     // Update technologies
@@ -243,6 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Generate project cards dynamically
     generateProjectCards();
+    
+    // Initialize dark mode
+    initDarkMode();
     
     // Project cards are now generated dynamically, so we don't need to set up event listeners here
     // as they are already set up in the generateProjectCards function
@@ -469,6 +484,53 @@ window.addEventListener('load', () => {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
+
+// Dark Mode Toggle Functionality
+function initDarkMode() {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+    } else {
+        body.setAttribute('data-theme', 'light');
+        themeIcon.className = 'fas fa-moon';
+    }
+    
+    // Theme toggle event listener
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        
+        if (currentTheme === 'dark') {
+            body.setAttribute('data-theme', 'light');
+            themeIcon.className = 'fas fa-moon';
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            themeIcon.className = 'fas fa-sun';
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+    });
+}
 
 // Add CSS for loading state
 const style = document.createElement('style');
