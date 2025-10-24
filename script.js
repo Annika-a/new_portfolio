@@ -30,19 +30,17 @@ function generateProjectCards() {
         ).join('');
         
         // Set the card HTML
-        const projectImageContent = project.imageSrc 
-            ? `<img src="${project.imageSrc}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">`
-            : `<i class="${project.icon}"></i>`;
+        const projectImageContent = project.projectImgSrc 
+            ? `<img src="${project.projectImgSrc}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">`
+            : '';
         
         projectCard.innerHTML = `
-            <div class="project-image">
-                ${projectImageContent}
+            <div class="project-header">
+                <h3>${project.title}</h3>
+                <span class="project-date">${displayDate}</span>
             </div>
+            ${project.projectImgSrc ? `<div class="project-image">${projectImageContent}</div>` : ''}
             <div class="project-content">
-                <div class="project-header">
-                    <h3>${project.title}</h3>
-                    <span class="project-date">${displayDate}</span>
-                </div>
                 <p>${project.overview.substring(0, 120)}...</p>
                 <div class="project-tech">
                     ${techTags}
@@ -147,6 +145,40 @@ const artModalTech = document.getElementById('artModalTech');
 const artModalFeatures = document.getElementById('artModalFeatures');
 const artModalResults = document.getElementById('artModalResults');
 
+// Update modal footer buttons function
+function updateModalFooterButtons(buttons) {
+    const modalFooter = document.querySelector('.modal-footer');
+    
+    // Clear existing buttons
+    modalFooter.innerHTML = '';
+    
+    // If no buttons provided, don't show any buttons
+    if (!buttons || buttons.length === 0) {
+        return;
+    }
+    
+    // Create buttons based on configuration
+    buttons.forEach(buttonConfig => {
+        const button = document.createElement('button');
+        button.className = `btn btn-${buttonConfig.type}`;
+        button.textContent = buttonConfig.text;
+        button.href = buttonConfig.url;
+        
+        // Add click event to handle navigation
+        button.addEventListener('click', (e) => {
+            if (buttonConfig.url && buttonConfig.url !== '#') {
+                window.open(buttonConfig.url, '_blank');
+            } else {
+                e.preventDefault();
+                // Handle placeholder links or custom actions here
+                console.log(`Button clicked: ${buttonConfig.text}`);
+            }
+        });
+        
+        modalFooter.appendChild(button);
+    });
+}
+
 // Open project modal function
 function openProjectModal(projectId) {
     const project = portfolioData.projects[projectId];
@@ -195,6 +227,9 @@ function openProjectModal(projectId) {
         li.textContent = feature;
         modalFeatures.appendChild(li);
     });
+    
+    // Update modal footer buttons
+    updateModalFooterButtons(project.buttons);
     
     // Show modal
     modal.style.display = 'block';

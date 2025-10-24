@@ -6,6 +6,7 @@ const portfolioData = {
             title: 'Data Lake Architecture',
             subtitle: 'Scalable cloud-based data storage and processing',
             date: '2024-03-15',
+            projectImgSrc: 'img/data-lake-preview.png',
             overview: 'Architected a comprehensive data lake solution for a leading Finnish fintech company, consolidating data from various Nordic banking sources into a unified, queryable repository. The system includes automated ETL processes, data governance, and security controls compliant with EU regulations.',
             technologies: ['AWS S3', 'AWS Glue', 'Amazon Athena', 'Lambda', 'CloudFormation', 'IAM'],
             features: [
@@ -16,13 +17,18 @@ const portfolioData = {
                 'Cost optimization through intelligent storage tiers',
                 'Integration with business intelligence tools'
             ],
-            results: 'Reduced data storage costs by 40% while improving query performance by 50%. Enabled self-service analytics for Finnish business users and reduced data preparation time by 80%. The solution now serves over 2 million Nordic customers.'
+            results: 'Reduced data storage costs by 40% while improving query performance by 50%. Enabled self-service analytics for Finnish business users and reduced data preparation time by 80%. The solution now serves over 2 million Nordic customers.',
+            buttons: [
+                { text: 'View Architecture', url: 'www.github.com', type: 'primary' },
+                { text: 'Live Demo', url: '#', type: 'secondary' }
+            ]
         },
         'ml-store': {
             icon: 'fas fa-chart-line',
             title: 'ML Feature Store',
             subtitle: 'Centralized feature management for machine learning',
             date: '2024-01-22',
+            projectImgSrc: 'img/ml-feature-store-preview.png',
             overview: 'Built a comprehensive feature store for a Helsinki-based gaming company that serves as the single source of truth for ML features across multiple teams. The system provides real-time feature computation, versioning, and monitoring capabilities for player behavior analytics.',
             technologies: ['Python', 'Redis', 'Docker', 'FastAPI', 'PostgreSQL', 'Apache Airflow'],
             features: [
@@ -33,26 +39,35 @@ const portfolioData = {
                 'Integration with ML training pipelines',
                 'Feature discovery and documentation'
             ],
-            results: 'Improved ML model performance by 20% through consistent feature engineering. Reduced feature development time by 60% and enabled faster model deployment cycles. The system now processes data for over 5 million active players across Nordic markets.'
+            results: 'Improved ML model performance by 20% through consistent feature engineering. Reduced feature development time by 60% and enabled faster model deployment cycles. The system now processes data for over 5 million active players across Nordic markets.',
+            buttons: [
+                { text: 'View Code', url: '#', type: 'primary' },
+                { text: 'Documentation', url: '#', type: 'secondary' }
+            ]
         },
         'ml project': {
             icon: 'fas fa-chart-line',
             title: 'ML for job searc',
             subtitle: 'Centralized feature management for machine learning',
             date: '2024-01-22',
+            projectImgSrc: 'img/ml-job-search-preview.png',
             overview: 'Built a comprehensive feature store for a Helsinki-based gaming company that serves as the single source of truth for ML features across multiple teams. The system provides real-time feature computation, versioning, and monitoring capabilities for player behavior analytics.',
             technologies: ['Python', 'Redis', 'Docker', 'FastAPI', 'PostgreSQL', 'Apache Airflow'],
             features: [
                 'Real-time feature computation and serving',
                 'Feature versioning and lineage tracking' 
             ],
-            results: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            results: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            buttons: [
+                { text: 'GitHub Repository', url: '#', type: 'primary' }
+            ]
         },
         pipeline: {
             icon: 'fas fa-database',
             title: 'Real-time Analytics Pipeline',
             subtitle: 'High-performance streaming data processing',
             date: '2023-11-08',
+            projectImgSrc: 'img/projectstats.png',
             imageSrc: 'img/projectstats.png',
             overview: ' Designed and implemented a robust real-time analytics pipeline for a Finnish e-commerce platform, capable of processing over 1 million events daily. The system handles data ingestion, transformation, and analysis with sub-second latency requirements for Nordic market operations.',
             technologies: ['Apache Kafka', 'Spark Streaming', 'AWS Kinesis', 'Docker', 'Kubernetes', 'Prometheus'],
@@ -64,7 +79,12 @@ const portfolioData = {
                 'Integration with existing data warehouse',
                 'Custom dashboard for monitoring pipeline health'
             ],
-            results: 'Reduced data processing time by 75% and enabled real-time decision making for Finnish business stakeholders. The pipeline now handles 3x more data volume with improved reliability, supporting peak shopping seasons across Nordic countries.'
+            results: 'Reduced data processing time by 75% and enabled real-time decision making for Finnish business stakeholders. The pipeline now handles 3x more data volume with improved reliability, supporting peak shopping seasons across Nordic countries.',
+            buttons: [
+                { text: 'View Dashboard', url: '#', type: 'primary' },
+                { text: 'View Code', url: '#', type: 'secondary' },
+                { text: 'Live Demo', url: '#', type: 'secondary' }
+            ]
         }
     },
     artwork: {
